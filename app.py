@@ -7,9 +7,9 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
-        'Get Help': 'https://www.linkedin.com/in/divyanshi-shrivastav',
-        'Report a bug': "https://www.github.com/Divvyanshii",
-        'About': "## A 'Student Performance and Placement Prediction Tool' by Divyanshi & Abhijit Mandal"
+        'Get Help': 'https://www.linkedin.com/in/abhiiiman',
+        'Report a bug': "https://www.github.com/abhiiiman",
+        'About': "## A 'Student Performance and Placement Prediction Tool' by Abhijit Mandal & Divyanshi"
     }
 )
 
