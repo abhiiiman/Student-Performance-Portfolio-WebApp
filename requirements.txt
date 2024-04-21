@@ -3,4 +3,3 @@ streamlit_option_menu
 pandas
 plotly
 plotly.express
-plotly.graph_objects
