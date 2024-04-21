@@ -30,7 +30,7 @@ st.set_page_config(
 )
 
 #remove all the default streamlit configs here
-# st.markdown(hide_st_style, unsafe_allow_html=True)
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 with st.sidebar:
     selected = option_menu(
@@ -548,7 +548,7 @@ if selected == "Download CSV":
                 batch_df['PlacementPrediction'] = placement_predictions
 
                 # Save the updated dataframe
-                batch_df.to_csv("updated_dataframe.csv", index=False)
+                # batch_df.to_csv("updated_dataframe.csv", index=False)
 
                 # Display a success message
                 st.balloons()
