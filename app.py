@@ -257,7 +257,7 @@ if selected == "Predictions":
         st.write(user_df)
 
         # Make predictions using the loaded model
-        model = pickle.load(open("Placement_Model.pkl", 'rb'))
+        model = pickle.load(open("Placement_Model", 'rb'))
 
         # Display the prediction result
         prediction = model.predict([[age, gender_encoded, stream_encoded, internships, cgpa, hostel_encoded, backlogs_encoded]])
@@ -508,7 +508,7 @@ if selected == "Download CSV":
         if predict_button:
             if uploaded_file:
                 # Make predictions using the loaded model
-                model = pickle.load(open("Placement_Model.pkl", 'rb'))
+                model = pickle.load(open("Placement_Model", 'rb'))
 
                 # Predict placement for each student and store the predictions in a new column
                 placement_predictions = []
