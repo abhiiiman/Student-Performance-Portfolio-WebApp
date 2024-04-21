@@ -15,7 +15,7 @@ hide_st_style = """
 
 # default data
 batch = "2021-2025"
-dataframe = pd.read_csv(r"Datasets\\collegePlacementData.csv")
+dataframe = pd.read_csv("collegePlacementData.csv")
 
 st.set_page_config(
     page_title="SMART",
@@ -68,7 +68,7 @@ if selected == "Home":
         st.markdown("#### `Get Started Now!`")
 
     with col2:
-        st.image("Images\\home_tab_pic.png")
+        st.image("home_tab_pic.png")
 
 # ========= UPLOAD TAB =========
 if selected == "Upload CSV":
@@ -98,7 +98,7 @@ if selected == "Upload CSV":
             else:
                 st.warning("Please upload a file")
     with col2:
-        st.image("Images\\upload_tab_pic.png")
+        st.image("upload_tab_pic.png")
 
 # ========= ANALYSIS TAB =========
 if selected == "Analysis":
@@ -112,7 +112,7 @@ if selected == "Analysis":
         st.divider()
     
     with col2:
-        st.image("Images\\Analysis_tab_pic.png")
+        st.image("Analysis_tab_pic.png")
 
     # Plotting  the graph so that we can visualize the output with respect to major features  
     st.subheader("Visualization of Internships VS Placement")
@@ -190,7 +190,7 @@ if selected == "Predictions":
         st.markdown("##### _Here we will use <span style='color:yellow'>Random Forest 🤖</span> Machine Learning Algorithm to create our Model to predict the Placement of Students_.", unsafe_allow_html=True)
         st.markdown("##### _You just need to provide the individual student data to get started and predict their placement probability using our <span style = 'color:yellow'>well trained Model right here</span>_.", unsafe_allow_html=True)
     with col2:
-        st.image("Images\\prediction_tab_pic.png")
+        st.image("prediction_tab_pic.png")
 
     st.divider()
 
@@ -257,7 +257,7 @@ if selected == "Predictions":
         st.write(user_df)
 
         # Make predictions using the loaded model
-        model = pickle.load(open("Models/Placement_Model", 'rb'))
+        model = pickle.load(open("Placement_Model", 'rb'))
 
         # Display the prediction result
         prediction = model.predict([[age, gender_encoded, stream_encoded, internships, cgpa, hostel_encoded, backlogs_encoded]])
@@ -291,7 +291,7 @@ if selected == "Performance":
         st.divider()
         st.markdown("_<font size = '4'>In this section, we delve into the comprehensive analysis of student performance throughout their academic journey. By examining semester-wise progress and performance metrics, we gain insights into their academic trajectory, identifying areas of strength and areas needing improvement. This detailed analysis aids in providing personalized guidance and support for each student's educational success.</font>_", unsafe_allow_html=True)
     with col2:
-        st.image("Images\\Student_Performance_Pic.png")
+        st.image("Student_Performance_Pic.png")
     
     st.divider()
 
@@ -475,7 +475,7 @@ if selected == "Settings":
         enable_animations = st.checkbox("Enable Animations 🫏", value=True)
         st.divider()
     with col2:
-        st.image("Images\\AppSettings.png")
+        st.image("AppSettings.png")
 
     st.markdown("### Bug Report 🪲")
     bug_report = st.text_area("Please describe the issue or report a bug:")
@@ -508,7 +508,7 @@ if selected == "Download CSV":
         if predict_button:
             if uploaded_file:
                 # Make predictions using the loaded model
-                model = pickle.load(open("Models/Placement_Model", 'rb'))
+                model = pickle.load(open("Placement_Model", 'rb'))
 
                 # Predict placement for each student and store the predictions in a new column
                 placement_predictions = []
@@ -566,7 +566,7 @@ if selected == "Download CSV":
                 st.warning("Please Upload your Dataset first ⚠️")
 
     with col2:
-        st.image("Images\\Download_Tab_Pic.png")
+        st.image("Download_Tab_Pic.png")
 
 
 # ========= CONTRIBUTORS =========
@@ -576,7 +576,7 @@ if selected == "Contributors":
 
     col1, col2 = st.columns(2)
     with col1:
-        st.image("Images\\A-pfp.png")
+        st.image("A-pfp.png")
         st.subheader("1️⃣ Abhijit Mandal")
         st.markdown('''
             * **`Github`** ⭐  
@@ -588,7 +588,7 @@ if selected == "Contributors":
         ''')
 
     with col2:
-        st.image("Images\\D-pfp.png")
+        st.image("D-pfp.png")
         st.subheader("2️⃣ Divyanshi")
         st.markdown('''
             * **`Github`** ⭐
