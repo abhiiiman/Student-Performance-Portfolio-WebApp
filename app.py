@@ -500,7 +500,7 @@ if selected == "Download CSV":
 
         uploaded_file = st.file_uploader("Upload your Batch Dataset file here")
         if uploaded_file:
-            with st.expander("Preview Uploaded Dataset"):
+            with st.expander("Click to Preview Uploaded Dataset"):
                 batch_df = pd.read_csv(uploaded_file)
                 st.dataframe(batch_df)
 
@@ -547,7 +547,6 @@ if selected == "Download CSV":
                 new_df = pd.read_excel("Datasets\\Student Dataset.xlsx")
 
                 # Add the placement predictions to a new column in the dataframe
-                batch_df['PlacementPrediction'] = placement_predictions
                 new_df['PlacementPrediction'] = placement_predictions
 
                 # Save the updated dataframe
@@ -564,6 +563,8 @@ if selected == "Download CSV":
                     file_name="Placement_Prediction.csv",
                     mime="text/csv"
                 )
+                with st.expander("Click to Preview Prediction Dataset"):
+                    st.dataframe(new_df)
 
             else:
                 st.warning("Please Upload your Dataset first ⚠️")
