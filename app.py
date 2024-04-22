@@ -543,9 +543,12 @@ if selected == "Download CSV":
 
                         # Update progress bar
                         progress_bar.progress((index + 1) / len(batch_df))
+                
+                new_df = pd.read_excel("Datasets\\Student Dataset.xlsx")
 
                 # Add the placement predictions to a new column in the dataframe
                 batch_df['PlacementPrediction'] = placement_predictions
+                new_df['PlacementPrediction'] = placement_predictions
 
                 # Save the updated dataframe
                 # batch_df.to_csv("updated_dataframe.csv", index=False)
@@ -557,7 +560,7 @@ if selected == "Download CSV":
                 # Provide a button to download the updated dataframe
                 st.download_button(
                     label="Download Updated DataFrame",
-                    data=batch_df.to_csv().encode('utf-8'),
+                    data=new_df.to_csv().encode('utf-8'),
                     file_name="Placement_Prediction.csv",
                     mime="text/csv"
                 )
